@@ -13,9 +13,22 @@ jobs:
       pull-requests: write
 
     steps:
+      - name: Request CodeRabbit Review
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ secrets.PAT_TOKEN }}
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: '@coderabbitai review'
+            });
+
       - name: Request Safety Confirmation
         uses: actions/github-script@v8
         with:
+          github-token: ${{ secrets.PAT_TOKEN }}
           script: |
             await github.rest.issues.createComment({
               owner: context.repo.owner,
