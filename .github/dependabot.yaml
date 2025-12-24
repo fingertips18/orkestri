@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/apps/web"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: chore
+      include: scope
+    labels:
+      - "dependencies"
+      - "npm"
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: chore
+      include: scope
+    labels:
+      - "dependencies"
+      - "github-actions"
+    open-pull-requests-limit: 5
