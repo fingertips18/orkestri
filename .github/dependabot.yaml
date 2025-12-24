@@ -7,6 +7,9 @@ updates:
     commit-message:
       prefix: chore
       include: scope
+    labels:
+      - "dependencies"
+      - "npm"
     open-pull-requests-limit: 10
 
   - package-ecosystem: "github-actions"
@@ -16,4 +19,7 @@ updates:
     commit-message:
       prefix: chore
       include: scope
+    labels:
+      - "dependencies"
+      - "github-actions"
     open-pull-requests-limit: 5
