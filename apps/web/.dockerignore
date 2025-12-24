@@ -17,4 +17,4 @@ node_modules
 # Test files
 __tests__
 *.test.ts*
-*.spect.ts*
+*.spec.ts*
