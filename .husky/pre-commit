@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+cd apps/web
+
+# Run Prettier and ESLint on the whole project
+npm run lint
+npm run format
