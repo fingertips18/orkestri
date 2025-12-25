@@ -4,5 +4,10 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.prettierPath": "apps/web/node_modules/prettier",
-  "prettier.requireConfig": true
+  "prettier.requireConfig": true,
+  "[proto]": {
+    "editor.defaultFormatter": "bufbuild.vscode-buf"
+  },
+  "protobuf.externalLinter.enabled": true,
+  "protobuf.externalLinter.linter": "buf",
 }
