@@ -20,3 +20,6 @@ components/shadcn/
 *.yaml
 *lock.json
 *.md
+
+# Generated protobuf files
+gen/

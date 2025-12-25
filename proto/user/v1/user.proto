@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package user.v1;
+
+import "google/protobuf/wrappers.proto";
+
+// UserService provides operations for managing user accounts, such as creation.
+service UserService {
+  // Create creates a new user account based on the provided user details.
+  rpc Create(CreateRequest) returns (CreateResponse);
+  // Get retrieves a user account by its ID.
+  rpc Get(GetRequest) returns (GetResponse);
+  // Update modifies an existing user account with the provided details.
+  rpc Update(UpdateRequest) returns (UpdateResponse);
+  // Delete removes a user account by its ID, with optional permanent deletion.
+  rpc Delete(DeleteRequest) returns (DeleteResponse);
+}
+
+// CreateRequest contains the user data to create a new user.
+message CreateRequest {
+  User user = 1;
+}
+
+// CreateResponse returns the ID of the newly created user.
+message CreateResponse {
+  string id = 1;
+}
+
+// GetRequest specifies the ID of the user to retrieve.
+message GetRequest {
+  string id = 1;
+}
+
+// GetResponse contains the retrieved user information.
+message GetResponse {
+  User user = 1;
+}
+
+// UpdateRequest contains the updated user data.
+message UpdateRequest {
+  User user = 1;
+}
+
+// UpdateResponse returns the ID of the updated user.
+message UpdateResponse {
+  string id = 1;
+}
+
+// DeleteRequest specifies the ID of the user to delete and optional purge flag.
+message DeleteRequest {
+  string id = 1;
+  google.protobuf.BoolValue purge = 2;
+}
+
+// DeleteResponse confirms the successful deletion of the user.
+message DeleteResponse {}
+
+// User represents a user entity with basic information.
+message User {
+  string id = 1;
+  string firstname = 2;
+  string lastname = 3;
+}

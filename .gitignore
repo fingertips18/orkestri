@@ -3,3 +3,6 @@
 
 # code editors
 !.vscode/settings.json
+
+# generated files
+apps/*/gen/

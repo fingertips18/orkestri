@@ -7,6 +7,10 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3000
+# Default port, can be overridden by environment variable
+ARG PORT=3000
+ENV PORT=${PORT}
+
+EXPOSE ${PORT}
 
 CMD ["npm", "run", "dev"]
