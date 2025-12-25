@@ -52,7 +52,12 @@ buf lint || die "Linting failed."
 
 if [ "$SKIP_BREAKING" = false ]; then
     echo "Checking for breaking changes..."
-    buf breaking --against .git#branch=main || die "Breaking changes detected."
+    # Check if proto directory exists on main branch
+    if git cat-file -e main:proto 2>/dev/null; then
+        buf breaking --against .git#branch=main || die "Breaking changes detected."
+    else
+        echo "Skipping breaking check: proto directory not found on main branch (possibly first proto addition)."
+    fi
 else
     echo "Skipping breaking changes check due to --skip-breaking flag."
 fi

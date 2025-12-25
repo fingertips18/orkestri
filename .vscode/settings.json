@@ -10,5 +10,4 @@
   },
   "protobuf.externalLinter.enabled": true,
   "protobuf.externalLinter.linter": "buf",
-  "protobuf.externalLinter.bufPath": "/opt/homebrew/bin/buf"
 }
