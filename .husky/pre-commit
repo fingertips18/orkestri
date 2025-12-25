@@ -3,6 +3,5 @@
 
 cd apps/web
 
-# Run Prettier and ESLint on the whole project
-npm run lint
-npm run format
+# Run Prettier and ESLint on staged files only
+npx lint-staged
