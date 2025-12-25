@@ -1,0 +1,22 @@
+# Ignore artifacts:
+build/
+coverage/
+
+# Ignore dependencies:
+node_modules/
+
+# Ignore output directories:
+dist/
+.next/
+
+# Ignore environment files:
+.env.*
+
+# Ignore generated:
+components/shadcn/
+
+# Ignore configuration files:
+*.yml   
+*.yaml
+*.json
+*.md
