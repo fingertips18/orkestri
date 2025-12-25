@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
-    "docker:local": "docker compose down -v --remove-orphans && docker compose build --no-cache && docker compose up",
+    "docker:local": "docker compose down --remove-orphans && docker compose build --no-cache && docker compose up",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
